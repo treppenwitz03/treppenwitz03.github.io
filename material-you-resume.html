@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owen David P. Malicsi - Designer & Software Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Material You Color Tokens - Dark Mode with Cyan-Green Accent */
+            --md-sys-color-primary: #4ECDC4;
+            --md-sys-color-on-primary: #003734;
+            --md-sys-color-primary-container: #00504B;
+            --md-sys-color-on-primary-container: #70F3E8;
+            
+            --md-sys-color-secondary: #B0CCC9;
+            --md-sys-color-on-secondary: #1C3532;
+            --md-sys-color-secondary-container: #334B47;
+            --md-sys-color-on-secondary-container: #CCEAE5;
+            
+            --md-sys-color-tertiary: #A0CAFD;
+            --md-sys-color-on-tertiary: #003258;
+            --md-sys-color-tertiary-container: #1E4B72;
+            --md-sys-color-on-tertiary-container: #D0E4FF;
+            
+            --md-sys-color-surface: #0F1419;
+            --md-sys-color-surface-dim: #0F1419;
+            --md-sys-color-surface-bright: #353A40;
+            --md-sys-color-surface-container-lowest: #0A0F13;
+            --md-sys-color-surface-container-low: #171C20;
+            --md-sys-color-surface-container: #1B2127;
+            --md-sys-color-surface-container-high: #262B31;
+            --md-sys-color-surface-container-highest: #31363C;
+            --md-sys-color-on-surface: #E1E3E6;
+            --md-sys-color-on-surface-variant: #BFC8CC;
+            
+            --md-sys-color-outline: #8A9297;
+            --md-sys-color-outline-variant: #404A4D;
+            
+            /* Elevation */
+            --md-sys-elevation-level0: none;
+            --md-sys-elevation-level1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+            --md-sys-elevation-level2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+            --md-sys-elevation-level3: 0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+            --md-sys-elevation-level4: 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+            --md-sys-elevation-level5: 0px 4px 4px 0px rgba(0, 0, 0, 0.3), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+            
+            /* Typography */
+            --md-sys-typescale-display-large-size: 57px;
+            --md-sys-typescale-display-medium-size: 45px;
+            --md-sys-typescale-display-small-size: 36px;
+            --md-sys-typescale-headline-large-size: 32px;
+            --md-sys-typescale-headline-medium-size: 28px;
+            --md-sys-typescale-headline-small-size: 24px;
+            --md-sys-typescale-title-large-size: 22px;
+            --md-sys-typescale-title-medium-size: 16px;
+            --md-sys-typescale-title-small-size: 14px;
+            --md-sys-typescale-body-large-size: 16px;
+            --md-sys-typescale-body-medium-size: 14px;
+            --md-sys-typescale-body-small-size: 12px;
+            --md-sys-typescale-label-large-size: 14px;
+            --md-sys-typescale-label-medium-size: 12px;
+            --md-sys-typescale-label-small-size: 11px;
+            
+            /* Spacing */
+            --md-comp-spacing-4: 4px;
+            --md-comp-spacing-8: 8px;
+            --md-comp-spacing-12: 12px;
+            --md-comp-spacing-16: 16px;
+            --md-comp-spacing-24: 24px;
+            --md-comp-spacing-32: 32px;
+            --md-comp-spacing-48: 48px;
+            
+            /* Shape */
+            --md-sys-shape-corner-none: 0px;
+            --md-sys-shape-corner-extra-small: 4px;
+            --md-sys-shape-corner-small: 8px;
+            --md-sys-shape-corner-medium: 12px;
+            --md-sys-shape-corner-large: 16px;
+            --md-sys-shape-corner-extra-large: 28px;
+        }
+        
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            line-height: 1.5;
+            font-size: var(--md-sys-typescale-body-medium-size);
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--md-comp-spacing-24);
+            min-height: 100vh;
+        }
+        
+        /* Header Card */
+        .header-card {
+            background: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+            border-radius: var(--md-sys-shape-corner-extra-large);
+            padding: var(--md-comp-spacing-48) var(--md-comp-spacing-32);
+            margin-bottom: var(--md-comp-spacing-24);
+            box-shadow: var(--md-sys-elevation-level2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+        }
+        
+        .header-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(78, 205, 196, 0.08));
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: var(--md-comp-spacing-24);
+            margin-bottom: var(--md-comp-spacing-24);
+        }
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--md-sys-shape-corner-large);
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--md-sys-typescale-headline-medium-size);
+            font-weight: 500;
+            box-shadow: var(--md-sys-elevation-level3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .avatar::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(78, 205, 196, 0.3) 50%, transparent 70%);
+            transform: rotate(45deg);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .name-title {
+            flex: 1;
+        }
+        
+        .name {
+            font-size: var(--md-sys-typescale-headline-large-size);
+            font-weight: 600;
+            margin-bottom: var(--md-comp-spacing-4);
+            line-height: 1.2;
+        }
+        
+        .title {
+            font-size: var(--md-sys-typescale-title-large-size);
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        
+        .contact-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--md-comp-spacing-8);
+        }
+        
+        .chip {
+            background: var(--md-sys-color-surface-container-high);
+            color: var(--md-sys-color-on-surface);
+            padding: var(--md-comp-spacing-8) var(--md-comp-spacing-12);
+            border-radius: var(--md-sys-shape-corner-small);
+            font-size: var(--md-sys-typescale-label-medium-size);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: var(--md-comp-spacing-4);
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+        
+        .chip:hover {
+            background: var(--md-sys-color-secondary-container);
+            box-shadow: var(--md-sys-elevation-level1);
+            transform: translateY(-1px);
+        }
+        
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: var(--md-comp-spacing-24);
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--md-sys-color-surface-container-lowest);
+            border-radius: var(--md-sys-shape-corner-large);
+            padding: var(--md-comp-spacing-24);
+            margin-bottom: var(--md-comp-spacing-16);
+            box-shadow: var(--md-sys-elevation-level1);
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            border: 1px solid var(--md-sys-color-outline-variant);
+        }
+        
+        .card:hover {
+            box-shadow: var(--md-sys-elevation-level2);
+            transform: translateY(-2px);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--md-comp-spacing-12);
+            margin-bottom: var(--md-comp-spacing-16);
+            padding-bottom: var(--md-comp-spacing-12);
+            border-bottom: 1px solid var(--md-sys-color-outline-variant);
+        }
+        
+        .card-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--md-sys-color-primary);
+            border-radius: var(--md-sys-shape-corner-small);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--md-sys-color-on-primary);
+            font-size: 14px;
+        }
+        
+        .card-title {
+            font-size: var(--md-sys-typescale-title-large-size);
+            font-weight: 600;
+            color: var(--md-sys-color-on-surface);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: var(--md-comp-spacing-24);
+            margin-bottom: var(--md-comp-spacing-24);
+            padding-bottom: var(--md-comp-spacing-16);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: var(--md-sys-color-primary);
+            border: 3px solid var(--md-sys-color-surface);
+            border-radius: 50%;
+            box-shadow: var(--md-sys-elevation-level2);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 18px;
+            width: 2px;
+            height: calc(100% + var(--md-comp-spacing-8));
+            background: linear-gradient(to bottom, 
+                var(--md-sys-color-primary) 0%, 
+                var(--md-sys-color-outline-variant) 50%, 
+                transparent 100%);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .job-title {
+            font-size: var(--md-sys-typescale-title-medium-size);
+            font-weight: 600;
+            color: var(--md-sys-color-on-surface);
+            margin-bottom: var(--md-comp-spacing-4);
+        }
+        
+        .company {
+            color: var(--md-sys-color-primary);
+            font-weight: 500;
+            font-size: var(--md-sys-typescale-body-medium-size);
+            margin-bottom: var(--md-comp-spacing-4);
+        }
+        
+        .date {
+            color: var(--md-sys-color-on-surface-variant);
+            font-size: var(--md-sys-typescale-body-small-size);
+            margin-bottom: var(--md-comp-spacing-12);
+            font-weight: 500;
+        }
+        
+        .description {
+            color: var(--md-sys-color-on-surface-variant);
+            line-height: 1.6;
+        }
+        
+        .description ul {
+            padding-left: var(--md-comp-spacing-16);
+            margin-top: var(--md-comp-spacing-8);
+        }
+        
+        .description li {
+            margin-bottom: var(--md-comp-spacing-4);
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            gap: var(--md-comp-spacing-16);
+        }
+        
+        .skill-category {
+            background: var(--md-sys-color-surface-container);
+            padding: var(--md-comp-spacing-16);
+            border-radius: var(--md-sys-shape-corner-medium);
+            border-left: 4px solid var(--md-sys-color-tertiary);
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+        
+        .skill-category:hover {
+            background: var(--md-sys-color-secondary-container);
+            transform: translateX(4px);
+        }
+        
+        .skill-category h4 {
+            font-size: var(--md-sys-typescale-title-medium-size);
+            font-weight: 600;
+            color: var(--md-sys-color-on-surface);
+            margin-bottom: var(--md-comp-spacing-8);
+        }
+        
+        .skill-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--md-comp-spacing-8);
+        }
+        
+        .skill-tag {
+            background: var(--md-sys-color-tertiary-container);
+            color: var(--md-sys-color-on-tertiary-container);
+            padding: var(--md-comp-spacing-4) var(--md-comp-spacing-8);
+            border-radius: var(--md-sys-shape-corner-extra-small);
+            font-size: var(--md-sys-typescale-label-small-size);
+            font-weight: 500;
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+        
+        .skill-tag:hover {
+            background: var(--md-sys-color-tertiary);
+            color: var(--md-sys-color-on-tertiary);
+            transform: scale(1.05);
+        }
+        
+        /* GitHub Links */
+        .github-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--md-comp-spacing-8);
+        }
+        
+        .github-link {
+            display: flex;
+            align-items: center;
+            gap: var(--md-comp-spacing-8);
+            padding: var(--md-comp-spacing-12);
+            background: var(--md-sys-color-surface-container);
+            border-radius: var(--md-sys-shape-corner-small);
+            text-decoration: none;
+            color: var(--md-sys-color-primary);
+            font-weight: 500;
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+            font-size: var(--md-sys-typescale-body-small-size);
+        }
+        
+        .github-link:hover {
+            background: var(--md-sys-color-primary-container);
+            transform: translateX(4px);
+        }
+        
+        /* Sidebar Cards */
+        .sidebar-card {
+            background: var(--md-sys-color-surface-container-low);
+            border-radius: var(--md-sys-shape-corner-medium);
+            padding: var(--md-comp-spacing-16);
+            margin-bottom: var(--md-comp-spacing-12);
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+        
+        .sidebar-card:hover {
+            background: var(--md-sys-color-surface-container);
+            transform: translateY(-1px);
+        }
+        
+        .sidebar-title {
+            font-size: var(--md-sys-typescale-title-medium-size);
+            font-weight: 600;
+            color: var(--md-sys-color-on-surface);
+            margin-bottom: var(--md-comp-spacing-12);
+            display: flex;
+            align-items: center;
+            gap: var(--md-comp-spacing-8);
+        }
+        
+        .education-item {
+            padding: var(--md-comp-spacing-12) 0;
+            border-bottom: 1px solid var(--md-sys-color-outline-variant);
+        }
+        
+        .education-item:last-child {
+            border-bottom: none;
+        }
+        
+        .degree {
+            font-weight: 600;
+            color: var(--md-sys-color-on-surface);
+            font-size: var(--md-sys-typescale-body-medium-size);
+        }
+        
+        .school {
+            color: var(--md-sys-color-primary);
+            font-size: var(--md-sys-typescale-body-small-size);
+            margin: var(--md-comp-spacing-4) 0;
+        }
+        
+        .education-date {
+            color: var(--md-sys-color-on-surface-variant);
+            font-size: var(--md-sys-typescale-label-medium-size);
+        }
+        
+        .honors {
+            color: var(--md-sys-color-tertiary);
+            font-size: var(--md-sys-typescale-label-small-size);
+            font-weight: 500;
+            margin-top: var(--md-comp-spacing-4);
+        }
+        
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--md-comp-spacing-8) 0;
+        }
+        
+        .proficiency {
+            background: var(--md-sys-color-tertiary-container);
+            color: var(--md-sys-color-on-tertiary-container);
+            padding: var(--md-comp-spacing-4) var(--md-comp-spacing-8);
+            border-radius: var(--md-sys-shape-corner-extra-small);
+            font-size: var(--md-sys-typescale-label-small-size);
+            font-weight: 500;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--md-comp-spacing-16);
+            }
+            
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--md-comp-spacing-16);
+            }
+            
+            .contact-chips {
+                justify-content: center;
+            }
+            
+            .header-card {
+                padding: var(--md-comp-spacing-24) var(--md-comp-spacing-16);
+            }
+            
+            .name {
+                font-size: var(--md-sys-typescale-headline-medium-size);
+            }
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus styles for keyboard navigation */
+        .chip:focus,
+        .github-link:focus,
+        .card:focus {
+            outline: 2px solid var(--md-sys-color-primary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-card">
+            <div class="header-content">
+                <div class="profile-section">
+                    <div class="avatar">OM</div>
+                    <div class="name-title">
+                        <h1 class="name">Owen David P. Malicsi</h1>
+                        <p class="title">Designer / Software Developer</p>
+                    </div>
+                </div>
+                <div class="contact-chips">
+                    <div class="chip">📱 +639776296488</div>
+                    <div class="chip">✉️ owendavidmalicsi@gmail.com</div>
+                    <div class="chip">📍 San Juan, Santo Tomas City</div>
+                    <div class="chip">💻 github.com/reporterwn203</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <main class="primary-content">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">👤</div>
+                        <h2 class="card-title">Profile</h2>
+                    </div>
+                    <p class="description">
+                        Dynamic student with 2+ years of apprenticeship in results-oriented 
+                        environment, excelling in problem-solving, team collaboration, and 
+                        efficient software development. Skilled in communication, adaptability, and 
+                        utilizing resources to achieve goals. Eager to contribute to growth, 
+                        adaptability, development, to contribute to the Motherland through 
+                        PROJECT 10-A05.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💼</div>
+                        <h2 class="card-title">Work Experience</h2>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="job-title">Operating System Developer Apprentice</div>
+                            <div class="company">Elementary LLC</div>
+                            <div class="date">2020 - 2022</div>
+                            <div class="description">
+                                <ul>
+                                    <li>Develop and maintain applications for the Elementary Operating System</li>
+                                    <li>Engaged in UI/UX and development discussions within the organization</li>
+                                    <li>Absorbed knowledge about project development in a corporate and open-sourced environment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <h2 class="card-title">Skills</h2>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Design & Development</h4>
+                            <div class="skill-list">
+                                <span class="skill-tag">UI/UX Experienced</span>
+                                <span class="skill-tag">Application Design</span>
+                                <span class="skill-tag">Development</span>
+                                <span class="skill-tag">Attention to Detail</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Programming</h4>
+                            <div class="skill-list">
+                                <span class="skill-tag">Expert in Python</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">Dart</span>
+                                <span class="skill-tag">C</span>
+                                <span class="skill-tag">Machine Learning</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Soft Skills</h4>
+                            <div class="skill-list">
+                                <span class="skill-tag">Time Management</span>
+                                <span class="skill-tag">Communication</span>
+                                <span class="skill-tag">Critical Thinking</span>
+                                <span class="skill-tag">Creativity</span>
+                                <span class="skill-tag">Teamwork</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔗</div>
+                        <h2 class="card-title">GitHub Works</h2>
+                    </div>
+                    <div class="github-links">
+                        <a href="https://github.com/logisherx" class="github-link">
+                            📦 github.com/logisherx
+                        </a>
+                        <a href="https://github.com/elementary" class="github-link">
+                            🏢 github.com/elementary
+                        </a>
+                        <a href="https://github.com/nextishop" class="github-link">
+                            🛒 github.com/nextishop
+                        </a>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h2 class="sidebar-title">🎓 Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="degree">Bachelor of Science in Computer Engineering</div>
+                        <div class="school">Batangas State University | College of Engineering</div>
+                        <div class="education-date">2022 - Present</div>
+                        <div style="font-style: italic; color: var(--md-sys-color-on-surface-variant); font-size: var(--md-sys-typescale-label-small-size); margin-top: var(--md-comp-spacing-4);">
+                            Currently aiming for the stars...
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="degree">Senior High School</div>
+                        <div class="school">St. Thomas Academy</div>
+                        <div class="education-date">2020 - 2022</div>
+                        <div class="honors">With High Honors</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="degree">Junior High School</div>
+                        <div class="school">St. Thomas Academy</div>
+                        <div class="education-date">2016 - 2022</div>
+                        <div class="honors">With Honors</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="degree">Elementary</div>
+                        <div class="school">St. Thomas North Central School</div>
+                        <div class="education-date">2010-2016</div>
+                        <div class="honors">With Honors</div>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h2 class="sidebar-title">🌍 Languages</h2>
+                    <div class="language-item">
+                        <span>English</span>
+                        <span class="proficiency">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Tagalog</span>
+                        <span class="proficiency">Fluent</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h2 class="sidebar-title">📋 References</h2>
+                    <div style="background: var(--md-sys-color-surface-container); padding: var(--md-comp-spacing-12); border-radius: var(--md-sys-shape-corner-small); border-left: 3px solid var(--md-sys-color-primary);">
+                        <h4 style="font-weight: 600; color: var(--md-sys-color-on-surface); margin-bottom: var(--md-comp-spacing-8); font-size: var(--md-sys-typescale-body-medium-size);">Elementary LLC</h4>
+                        <div style="display: flex; flex-direction: column; gap: var(--md-comp-spacing-4);">
+                            <a href="https://github.com/orgs/elementary/people" style="color: var(--md-sys-color-primary); text-decoration: none; font-size: var(--md-sys-typescale-body-small-size); transition: opacity 0.2s;">github.com/orgs/elementary/people</a>
+                            <a href="https://elementary.io" style="color: var(--md-sys-color-primary); text-decoration: none; font-size: var(--md-sys-typescale-body-small-size); transition: opacity 0.2s;">elementary.io</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
